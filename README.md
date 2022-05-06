@@ -29,5 +29,6 @@ An example:
 ```
 python -u "C:\Users\User\Documents\folder\main.py" -img C:\Users\User\Downloads\folder\example.png
 ```
+Note that the program is made in such that it only works on 16:9 images, since it has specific crop values to isolate the numbers. Any other aspect ratios, such as a screenshot from a smartphone (which is likely isn't in 16:9 ratio), won't work.
 ### Notes
 The most important thing to note is that this program isn't perfect. I had a small amount of images to test on, to which most of it look similar to each other, particularly I'm talking about the ships who are MVP on those images. The calculated total for the shipgirls' damage and the extracted total damage in-game from the image could be either higher or lower than usual, and varying from obvious to subtle as it depends on the digits affected. The total damage displayed in the game is much more susceptible to inaccurate readings, compared to the individual damages, as its background is highly affected by the MVP shipgirl's art.
