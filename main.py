@@ -3,7 +3,7 @@ import cv2
 import pytesseract
 
 # crop values for the six damage totals for the ship
-# values are in relation to the center (top, bottom, left right)
+# values are in relation to the center (top, bottom, left, right)
 IND_DAMAGES = [[0.362, -0.293, 0.419, -0.282],
                [0.129, -0.075, 0.336, -0.205],
                [-0.091, 0.162, 0.258, -0.127],
@@ -45,12 +45,12 @@ def process(val, bool):
 # process individual ship damage totals
 for crop_val_arr in IND_DAMAGES: process(crop_val_arr, True)
 # process in-game damage total
-process([0.59, -0.46, 0.71 , -0.47], False)
+process([0.59, -0.46, 0.71, -0.47], False)
 
 if total_calc_dmg > 0:
     print('Image: ', args['img'].split('\\')[-1])
     print('============ANALYSIS============')
-    print('TOTAL DAMAGE:\t\t', total_ingame_dmg)
+    print('TOTAL DAMAGE IN-GAME:\t', total_ingame_dmg)
     print('CALCULATED DAMAGE:\t', total_calc_dmg)
     print('DIFFERENCE:\t\t', total_ingame_dmg - total_calc_dmg)
     print('================================')

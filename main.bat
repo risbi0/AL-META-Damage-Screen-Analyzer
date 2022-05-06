@@ -1,6 +1,6 @@
 @ECHO off
 TITLE AL META Damage Screen Analyzer
-:: set the path to the emulator screnshot folder, and the python file directories respectively
+:: set the path to the emulator screnshot folder, and the main.py file respectively
 :: make sure there's no spaces on filenames
 SET sc_path=D:\User\Pictures\Azur_Lane_Bluestacks
 SET fl_path=C:\Users\User\folder\main.py
@@ -16,13 +16,14 @@ IF %prev_count% NEQ %curr_count% GOTO EXEC
 GOTO WAIT
 
 :WAIT
-SET /A prev_count=%curr_count%
 ECHO Waiting...
 ECHO ========
 ECHO Don't screenshot anything other than the META damage screen while this script is running
 ECHO for less false positives, since it is monitoring the whole screenshots folder
 ECHO ========
 ECHO Press CTRL + C to quit, or just close the window
+SET /A prev_count=%curr_count%
+:: loop every second
 TIMEOUT /t 1 > nul && cls
 GOTO LOOP
 
